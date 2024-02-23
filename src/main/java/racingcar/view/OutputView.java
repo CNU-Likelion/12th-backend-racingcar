@@ -4,8 +4,10 @@ import java.util.List;
 
 public class OutputView {
 
+    private static final String NEW_LINE = System.lineSeparator();
+
     public void printProcessingResult() {
-        System.out.println("\n실행결과");
+        System.out.println(NEW_LINE + "실행결과");
     }
 
     public void printCurrentCarPositions(final List<String> carNames, final List<Integer> carPositions) {
