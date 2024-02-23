@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.controller;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -7,12 +7,12 @@ import racingcar.domain.RandomNumberGenerator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-public class RacingGame {
+public class RacingGameController {
 
     private final InputView inputView;
     private final OutputView outputView;
 
-    public RacingGame(final InputView inputView, final OutputView outputView) {
+    public RacingGameController(final InputView inputView, final OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
     }
@@ -25,6 +25,7 @@ public class RacingGame {
         final int trial = repeatInput(inputView::getTrial);
 
         race(trial, cars);
+
         final List<String> winners = cars.getWinners();
         outputView.printWinners(winners);
     }

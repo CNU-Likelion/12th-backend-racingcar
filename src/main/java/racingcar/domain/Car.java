@@ -5,16 +5,19 @@ import racingcar.domain.vo.Position;
 
 public class Car {
 
+    private static final int INITIAL_CAR_POSITION = 0;
+    private static final int MOVING_CRITERIA = 4;
+
     private final Name name;
     private Position position;
 
     public Car(final String name) {
         this.name = new Name(name);
-        this.position = new Position(0);
+        this.position = new Position(INITIAL_CAR_POSITION);
     }
 
     public void move(final int movingPoint) {
-        if (movingPoint >= 4) {
+        if (movingPoint >= MOVING_CRITERIA) {
             position = position.increase();
         }
     }
