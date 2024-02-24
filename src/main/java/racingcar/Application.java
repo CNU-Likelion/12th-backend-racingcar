@@ -11,9 +11,7 @@ public class Application {
 
         RaceGame raceGame = new RaceGame(userName);
 
-        for (int i = 0; i < numberOfTry; i++) {
-            raceGame.doOneGame();
-        }
+        raceGame.doGame(numberOfTry);
 
     }
 }

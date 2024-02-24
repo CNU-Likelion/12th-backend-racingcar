@@ -13,5 +13,12 @@ public class Car {
         this.position++;
     }
 
-    // 추가 기능 구현
+    public StringBuilder expressCarInfoToString() {
+        StringBuilder positionString = new StringBuilder();
+        positionString.append(name).append(" : ");
+        for (int i = 0; i < position; i++) {
+            positionString.append("-");
+        }
+        return positionString;
+    }
 }

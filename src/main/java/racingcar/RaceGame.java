@@ -9,14 +9,23 @@ public class RaceGame {
         }
     }
 
+    public void doGame(int numberOfTry) {
+        for (int i = 0; i < numberOfTry; i++) {
+            doOneGame();
+        }
+    }
+
     public void doOneGame() {
         RandomNumMaker randomNumMaker = new RandomNumMaker();
+        AnswerPrinter answerPrinter = new AnswerPrinter();
 
         for (int i = 0; i < racingCars.length; i++) {
             if (randomNumMaker.RandomNum() >= 4) {
                 racingCars[i].IncreasePosition();
             }
         }
+
+        answerPrinter.printEffect(racingCars);
     }
 
 }
