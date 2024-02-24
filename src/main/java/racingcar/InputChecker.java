@@ -2,9 +2,12 @@ package racingcar;
 
 public class InputChecker {
 
-    public void checkName(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("[ERROR] 이름은 5자 이내로 입력해주세요.");
+    public void checkName(String[] userName) {
+        for (int i = 0; i < userName.length; i++) {
+            if (userName[i].length() > 5) {
+                System.out.println("[ERROR]");
+                throw new IllegalArgumentException();
+            }
         }
     }
 

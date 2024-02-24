@@ -12,5 +12,4 @@ public class AnswerPrinter {
     public void printWinner() {
 
     }
-
 }
