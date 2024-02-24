@@ -9,5 +9,9 @@ public class Car {
         this.name = name;
     }
 
+    public void IncreasePosition() {
+        this.position++;
+    }
+
     // 추가 기능 구현
 }
