@@ -8,8 +8,6 @@ public class Application {
         int numberOfTry = inputGetter.getNumberOfTry();
 
         RaceGame raceGame = new RaceGame(userName);
-
         raceGame.doGame(numberOfTry);
-
     }
 }

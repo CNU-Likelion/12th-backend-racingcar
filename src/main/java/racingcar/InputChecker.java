@@ -5,7 +5,7 @@ public class InputChecker {
     public void checkName(String[] userName) {
         for (int i = 0; i < userName.length; i++) {
             if (userName[i].length() > 5) {
-                System.out.println("[ERROR]");
+                System.out.println("[ERROR] 이름은 5자 이내로 입력하셔야 합니다.");
                 throw new IllegalArgumentException();
             }
         }

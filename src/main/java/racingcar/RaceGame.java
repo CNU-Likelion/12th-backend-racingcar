@@ -1,8 +1,7 @@
 package racingcar;
 
-import java.util.*;
-
 public class RaceGame {
+
     private static Car[] racingCars;
 
     public RaceGame(String[] userName) {
@@ -14,12 +13,12 @@ public class RaceGame {
 
     public void doGame(int numberOfTry) {
         for (int i = 0; i < numberOfTry; i++) {
-            doOneGame();
+            doSingleGame();
         }
         selectWinner();
     }
 
-    public void doOneGame() {
+    public void doSingleGame() {
         RandomNumMaker randomNumMaker = new RandomNumMaker();
         AnswerPrinter answerPrinter = new AnswerPrinter();
 
@@ -43,5 +42,4 @@ public class RaceGame {
         }
         answerPrinter.printWinner(winner);
     }
-
 }
