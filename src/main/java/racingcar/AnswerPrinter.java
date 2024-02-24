@@ -9,4 +9,8 @@ public class AnswerPrinter {
         System.out.println();
     }
 
+    public void printWinner() {
+
+    }
+
 }

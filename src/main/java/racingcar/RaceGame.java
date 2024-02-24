@@ -4,6 +4,7 @@ public class RaceGame {
     private static Car[] racingCars;
 
     public RaceGame(String[] userName) {
+        racingCars = new Car[userName.length];
         for (int i = 0; i < userName.length; i++) {
             racingCars[i] = new Car(userName[i]);
         }
@@ -13,6 +14,7 @@ public class RaceGame {
         for (int i = 0; i < numberOfTry; i++) {
             doOneGame();
         }
+
     }
 
     public void doOneGame() {
