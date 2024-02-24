@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.*;
+
 public class RaceGame {
     private static Car[] racingCars;
 
@@ -14,7 +16,7 @@ public class RaceGame {
         for (int i = 0; i < numberOfTry; i++) {
             doOneGame();
         }
-
+        selectWinner();
     }
 
     public void doOneGame() {
@@ -26,8 +28,20 @@ public class RaceGame {
                 racingCars[i].IncreasePosition();
             }
         }
-
         answerPrinter.printEffect(racingCars);
+    }
+
+    public void selectWinner() {
+        AnswerPrinter answerPrinter = new AnswerPrinter();
+        int maxPosition = 0;
+        StringBuilder winner = new StringBuilder();
+        for (int i = 0; i < racingCars.length; i++) {
+            maxPosition = racingCars[i].compareMaxAndPosition(maxPosition);
+        }
+        for (int i = 0; i < racingCars.length; i++) {
+            winner = racingCars[i].addWinner(winner, maxPosition);
+        }
+        answerPrinter.printWinner(winner);
     }
 
 }

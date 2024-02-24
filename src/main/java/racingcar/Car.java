@@ -21,4 +21,21 @@ public class Car {
         }
         return positionString;
     }
+
+    public int compareMaxAndPosition(int maxPosition) {
+        if (maxPosition <= position) {
+            return position;
+        }
+        return maxPosition;
+    }
+
+    public StringBuilder addWinner(StringBuilder winner, int position) {
+        if (position == this.position) {
+            if (winner.length() != 0) {
+                winner.append(",");
+            }
+            winner.append(name);
+        }
+        return winner;
+    }
 }

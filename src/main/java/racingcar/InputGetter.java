@@ -4,9 +4,6 @@ import mallang.missionutils.Console;
 
 public class InputGetter {
 
-    public final static int OK = 1;
-    public final static int NOT_OK = 0;
-
     public String[] getUserName() {
         InputChecker inputChecker = new InputChecker();
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");

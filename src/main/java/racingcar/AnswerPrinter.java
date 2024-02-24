@@ -9,7 +9,8 @@ public class AnswerPrinter {
         System.out.println();
     }
 
-    public void printWinner() {
-
+    public void printWinner(StringBuilder winner) {
+        System.out.printf("최종 우승자 : ");
+        System.out.println(winner);
     }
 }
