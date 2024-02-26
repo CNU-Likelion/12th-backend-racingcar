@@ -43,8 +43,8 @@ public class Application {
     }
 
     private static void validateCarNames(String carNames) {
-        if (!carNames.matches("[a-zA-Z,]+") || carNames.contains(",")) {
-            throw new IllegalArgumentException("자동차 이름은 영문자 쉼표(,)로 구분하여 입력하세요.");
+        if (!carNames.matches("[a-zA-Z]+(,[a-zA-Z]+)*")) {
+            throw new IllegalArgumentException("자동차 이름은 영문자로만 구분하여 입력하세요.");
         }
     }
 
@@ -113,7 +113,7 @@ public class Application {
     }
 
     private static void printWinners(List<String> winners) {
-        System.out.print("\n최종 우승자");
+        System.out.print("\n최종 우승자 : ");
         System.out.println(String.join(", ", winners));
     }
 
