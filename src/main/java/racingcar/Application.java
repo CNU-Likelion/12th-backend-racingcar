@@ -1,7 +1,6 @@
 package racingcar;
 
 import mallang.missionutils.Console;
-import mallang.missionutils.Randoms;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +9,17 @@ public class Application {
 
     public static void main(String[] args) {
         // TODO 구현 진행
+        try {
+            List<Car> cars = initializeCars();
+            int tryCount = getTryCount();
+
+            race(cars, tryCount);
+
+            printRaceResult(cars);
+            printWinners(checkWinner(cars));
+        } catch (IllegalArgumentException e) {
+            printErrorMessage(e.getMessage());
+        }
     }
 
     private static List<Car> initializeCars() {
