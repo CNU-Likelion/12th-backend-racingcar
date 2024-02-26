@@ -12,7 +12,7 @@ public class Application {
         // TODO 구현 진행
     }
 
-    public static List<Car> initializeCars() {
+    private static List<Car> initializeCars() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String carNamesInput = Console.readLine();
         validateCarNames(carNamesInput);
@@ -27,26 +27,26 @@ public class Application {
         return cars;
     }
 
-    public static void validateCarNames(String carNames) {
+    private static void validateCarNames(String carNames) {
         if (!carNames.matches("[a-zA-Z,]+") || carNames.contains(",")) {
             throw new IllegalArgumentException("자동차 이름은 영문자 쉼표(,)로 구분하여 입력하세요.");
         }
     }
 
-    public static int getTryCount() {
+    private static int getTryCount() {
         System.out.println("시도할 횟수는 몇 회인가요?");
         String tryCountInput = Console.readLine();
         validateTryCount(tryCountInput);
         return Integer.parseInt(tryCountInput);
     }
 
-    public static void validateTryCount(String tryCount) {
+    private static void validateTryCount(String tryCount) {
         if (!tryCount.matches("\\d+")) {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 합니다.");
         }
     }
 
-    public static void race(List<Car> cars, int tryCount) {
+    private static void race(List<Car> cars, int tryCount) {
         for (int i = 0; i < tryCount; i++) {
             for (Car car : cars) {
                 car.move();
@@ -54,7 +54,7 @@ public class Application {
         }
     }
 
-    public static void printRaceResult(List<Car> cars) {
+    private static void printRaceResult(List<Car> cars) {
         System.out.println("\n실행 결과");
 
         for (Car car : cars) {
@@ -66,5 +66,17 @@ public class Application {
 
             System.out.println(result.toString());
         }
+    }
+
+    private static List<String> checkWinner(List<Car> cars) {
+        List<String> winners = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.getPosition() == max) {
+                winners.add(car.getName());
+            }
+        }
+
+        return winners;
     }
 }
