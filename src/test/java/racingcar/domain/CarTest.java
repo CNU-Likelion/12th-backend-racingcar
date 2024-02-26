@@ -25,8 +25,8 @@ class CarTest {
     void create() {
         // then
         assertSoftly(softly -> {
-            assertThat(car.getName()).isEqualTo(carName);
-            assertThat(car.getPosition()).isZero();
+            softly.assertThat(car.getName()).isEqualTo(carName);
+            softly.assertThat(car.getPosition()).isZero();
         });
     }
 
