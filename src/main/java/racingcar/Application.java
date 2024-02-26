@@ -63,7 +63,7 @@ public class Application {
 
     private static void validateTryCount(String tryCount) {
         if (!tryCount.matches("\\d+")) {
-            throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 합니다.");
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
         }
     }
 
@@ -120,4 +120,5 @@ public class Application {
     private static void printErrorMessage(String errorMessage) {
         System.out.println("[ERROR] " + errorMessage);
     }
+
 }
