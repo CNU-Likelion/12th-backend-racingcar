@@ -45,4 +45,12 @@ public class Application {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 합니다.");
         }
     }
+
+    public static void race(List<Car> cars, int tryCount) {
+        for (int i = 0; i < tryCount; i++) {
+            for (Car car : cars) {
+                car.move();
+            }
+        }
+    }
 }
