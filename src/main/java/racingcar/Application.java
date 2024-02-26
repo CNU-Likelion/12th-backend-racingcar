@@ -53,4 +53,18 @@ public class Application {
             }
         }
     }
+
+    public static void printRaceResult(List<Car> cars) {
+        System.out.println("\n실행 결과");
+
+        for (Car car : cars) {
+            StringBuilder result = new StringBuilder(car.getName() + " : ");
+
+            for (int i = 0; i < car.getPosition(); i++) {
+                result.append("-");
+            }
+
+            System.out.println(result.toString());
+        }
+    }
 }
