@@ -175,6 +175,17 @@ public class Car {
 
 ---
 
+
 ## 📝 License
 
 This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/blob/master/LICENSE) licensed.
+
+## 구현해야 할 내용
+- 자동차 이름을 입력받아야함
+  -쉼표로 구분
+  -5글자가 넘어가면 안됌.
+- 시도 횟수를 입력받아야함.
+- 랜덤 숫자를 생성해야함.
+- 랜덤값이 4이상이면 앞으로 한칸 전진해야함.
+- 시도 횟수가 끝나면 우승자를 결정해야함.
+  -우승자가 여러명일 경우 , 를 이용하여 나타내야함.
