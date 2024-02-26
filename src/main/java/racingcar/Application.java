@@ -90,4 +90,13 @@ public class Application {
 
         return max;
     }
+
+    private static void printWinners(List<String> winners) {
+        System.out.print("\n최종 우승자");
+        System.out.println(String.join(", ", winners));
+    }
+
+    private static void printErrorMessage(String errorMessage) {
+        System.out.println("[ERROR] " + errorMessage);
+    }
 }
