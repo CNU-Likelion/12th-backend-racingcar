@@ -70,13 +70,26 @@ public class Application {
 
     private static List<String> checkWinner(List<Car> cars) {
         List<String> winners = new ArrayList<>();
+        int maxPosition = getMaxPosition(cars);
 
         for (Car car : cars) {
-            if (car.getPosition() == max) {
+            if (car.getPosition() == maxPosition) {
                 winners.add(car.getName());
             }
         }
 
         return winners;
     }
+
+    private static int getMaxPosition(List<Car> cars) {
+        int max = 0;
+
+        for (Car car : cars) {
+            max = Math.max(max, car.getPosition());
+        }
+
+        return max;
+    }
+
+    
 }
