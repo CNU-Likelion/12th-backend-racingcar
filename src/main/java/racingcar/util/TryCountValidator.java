@@ -3,7 +3,7 @@ package racingcar.util;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-public class InputValidator {
+public class TryCountValidator {
 
     private static final String INVALID_TRY_COUNT_MESSAGE = "[ERROR] 시도 횟수는 숫자여야 한다.";
     private static final String EMPTY_TRY_COUNT_MESSAGE = "[ERROR] 시도 횟수는 빈 공백이어서는 안된다.";

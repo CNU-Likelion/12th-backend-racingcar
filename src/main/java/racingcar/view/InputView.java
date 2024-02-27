@@ -3,7 +3,7 @@ package racingcar.view;
 import java.util.List;
 import mallang.missionutils.Console;
 import racingcar.util.CarValidator;
-import racingcar.util.InputValidator;
+import racingcar.util.TryCountValidator;
 
 public class InputView {
 
@@ -24,7 +24,7 @@ public class InputView {
     public static int getTryCount() {
         print(TRY_COUNT_INPUT_MESSAGE);
         String tryCount = Console.readLine();
-        InputValidator.validateTryCount(tryCount);
+        TryCountValidator.validateTryCount(tryCount);
         return Integer.parseInt(tryCount);
     }
 }
