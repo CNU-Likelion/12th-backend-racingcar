@@ -11,13 +11,8 @@ public class User {
     int gameCnt;
 
     public void getCarName() {
-        try {
             String[] nameLine = readLine().split(",");
             this.carNames = Arrays.stream(nameLine).toList();
-        } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
-            getCarName();
-        }
     }
 
 
