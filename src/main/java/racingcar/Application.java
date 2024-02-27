@@ -48,5 +48,20 @@ public class Application {
             }
             System.out.println("");
         }
+        int maxPosition = findMaxPosition(cars);
+        //최대 위치 출력 확인용
+        System.out.println(maxPosition);
+    }
+
+    //위치의 최댓값
+    private static int findMaxPosition(List<Car> cars) {
+        int maxPosition = 0;
+        for (Car car : cars) {
+            int currentPosition = car.getPosition();
+            if (currentPosition > maxPosition) {
+                maxPosition = currentPosition;
+            }
+        }
+        return maxPosition;
     }
 }
