@@ -17,13 +17,10 @@ public class User {
             String[] nameLine = readLine().split(",");
             this.carNames = Arrays.stream(nameLine).toList();
             checkNameLength(5);
-
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 자동차 값 입력오류");
             getCarName();
-
         }
-
     }
 
     public void checkNameLength(int length) {
@@ -45,15 +42,10 @@ public class User {
         try {
             System.out.println("시도할 회수는 몇회인가요?");
             this.gameCnt = Integer.parseInt(readLine());
-
         } catch (IllegalArgumentException e){
             System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
             getGameCnt();
-
         }
-
     }
-
-
 }
 
