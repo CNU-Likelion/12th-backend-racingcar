@@ -16,6 +16,7 @@ public class User {
         try {
             String[] nameLine = readLine().split(",");
             this.carNames = Arrays.stream(nameLine).toList();
+            checkNameLength(5);
 
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 자동차 값 입력오류");
@@ -25,7 +26,14 @@ public class User {
 
     }
 
-
+    public void checkNameLength(int length) {
+        for (String name : carNames) {
+            if (name.length() > length) {
+                System.out.println("[ERROR] 자동차 이름은 5글자 이하여야한다.");
+                getCarName();
+            }
+        }
+    }
 
     public void makeCars() {
         for (String name : carNames) {
