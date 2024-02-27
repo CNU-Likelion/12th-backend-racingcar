@@ -8,12 +8,14 @@ public class CarValidator {
 
     private static final String INVALID_NAME_LENGTH_MESSAGE = "[ERROR] 자동차 이름은 5자 이내의 이름이어야 합니다.";
 
-    public static void validate(List<String> names) {
+    public static boolean validate(List<String> names) {
         try {
             validateNameLength(names);
+            return true;
         } catch (Exception e) {
             OutputView.print(e.getMessage());
             InputView.getCarNames();
+            return false;
         }
     }
 

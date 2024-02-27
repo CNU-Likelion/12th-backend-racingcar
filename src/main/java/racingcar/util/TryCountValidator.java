@@ -8,13 +8,14 @@ public class TryCountValidator {
     private static final String INVALID_TRY_COUNT_MESSAGE = "[ERROR] 시도 횟수는 숫자여야 한다.";
     private static final String EMPTY_TRY_COUNT_MESSAGE = "[ERROR] 시도 횟수는 빈 공백이어서는 안된다.";
 
-    public static void validateTryCount(String tryCount) {
+    public static boolean validateTryCount(final String tryCount) {
         try {
             validateInvalidTryCount(tryCount);
             validateEmptyTryCount(tryCount);
+            return true;
         } catch (Exception e) {
             OutputView.print(e.getMessage());
-            InputView.getTryCount();
+            return false;
         }
     }
 

@@ -17,14 +17,18 @@ public class InputView {
     public static List<String> getCarNames() {
         print(CAR_NAME_INPUT_MESSAGE);
         List<String> carNames = List.of(Console.readLine().split(","));
-        CarValidator.validate(carNames);
-        return carNames;
+        if (CarValidator.validate(carNames)) {
+            return carNames;
+        }
+        return getCarNames();
     }
 
     public static int getTryCount() {
         print(TRY_COUNT_INPUT_MESSAGE);
         String tryCount = Console.readLine();
-        TryCountValidator.validateTryCount(tryCount);
-        return Integer.parseInt(tryCount);
+        if (TryCountValidator.validateTryCount(tryCount)) {
+            return Integer.parseInt(tryCount);
+        }
+        return getTryCount();
     }
 }
