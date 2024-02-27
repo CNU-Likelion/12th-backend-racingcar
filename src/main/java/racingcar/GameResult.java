@@ -23,4 +23,13 @@ public class GameResult {
         return maxPositionValue;
     }
 
+    public void addWinnerCars(List<Car> carList) {
+        int maxPositionValue = findMaxPositionValue(carList);
+        for (Car c:carList) {
+            if (c.getPosition() == maxPositionValue) {
+                this.winners.add(c);
+            }
+        }
+    }
+
 }
