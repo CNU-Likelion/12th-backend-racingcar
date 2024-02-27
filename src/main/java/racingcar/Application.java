@@ -1,8 +1,11 @@
 package racingcar;
 
+import racingcar.controller.RacingCarController;
+
 public class Application {
 
     public static void main(String[] args) {
-        // TODO 구현 진행
+        final var racingGame = new RacingCarController();
+        racingGame.start();
     }
 }
