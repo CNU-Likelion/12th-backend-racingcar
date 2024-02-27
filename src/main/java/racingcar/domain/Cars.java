@@ -3,6 +3,7 @@ package racingcar.domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import racingcar.util.RandomNumberGenerator;
 
 public class Cars {
 
@@ -20,27 +21,25 @@ public class Cars {
 
     public void raceOneGame() {
         for (Car car : cars) {
-            car.moveOrNot();
+            car.moveOrNot(new RandomNumberGenerator());
         }
     }
 
     public List<Car> pickWinner() {
-        Car maxPositionCar = findWinner();
-        return findSamePositionCars(maxPositionCar);
+        Car maxPositionCar = findMaxPosition();
+        return findWinners(maxPositionCar);
     }
 
-    private Car findWinner() {
-        return cars
-                .stream()
+    private Car findMaxPosition() {
+        return cars.stream()
                 .max(Car::comparePosition)
-                .orElseThrow(() -> new IllegalArgumentException("RacingCars가 비어있습니다."));
+                .orElseThrow(() -> new IllegalArgumentException("cars가 비어있습니다."));
     }
 
-    private List<Car> findSamePositionCars(Car maxPositionCar) {
-        return cars
-                .stream()
+    private List<Car> findWinners(Car maxPositionCar) {
+        return cars.stream()
                 .filter(maxPositionCar::isSamePositionCar)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<Car> getCars() {

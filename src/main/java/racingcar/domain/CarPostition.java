@@ -18,7 +18,7 @@ public final class CarPostition implements Comparable<CarPostition> {
         return position;
     }
 
-    public CarPostition add() {
+    public CarPostition increase() {
         return CarPostition.of(position + 1);
     }
 

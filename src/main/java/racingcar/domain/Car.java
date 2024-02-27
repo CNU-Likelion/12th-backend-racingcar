@@ -13,24 +13,15 @@ public class Car {
         this.position = CarPostition.of(0);
     }
 
-    public void move() {
-        position = position.add();
+    private void move() {
+        position = position.increase();
     }
 
-    public void moveOrNot() {
-        boolean condition = getMoveCondition();
-        if (condition) {
-            move();
-        }
-    }
-
-    private boolean getMoveCondition() {
-        NumberGenerator numberGenerator = new RandomNumberGenerator();
+    public void moveOrNot(NumberGenerator numberGenerator) {
         int randomValue = numberGenerator.generate();
         if (randomValue >= 4) {
-            return true;
+            move();
         }
-        return false;
     }
 
     public int comparePosition(Car otherCar) {

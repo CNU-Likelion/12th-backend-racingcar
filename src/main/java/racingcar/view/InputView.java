@@ -2,8 +2,6 @@ package racingcar.view;
 
 import java.util.List;
 import mallang.missionutils.Console;
-import racingcar.util.CarValidator;
-import racingcar.util.TryCountValidator;
 
 public class InputView {
 
@@ -17,18 +15,12 @@ public class InputView {
     public static List<String> getCarNames() {
         print(CAR_NAME_INPUT_MESSAGE);
         List<String> carNames = List.of(Console.readLine().split(","));
-        if (CarValidator.validate(carNames)) {
-            return carNames;
-        }
-        return getCarNames();
+        return carNames;
     }
 
-    public static int getTryCount() {
+    public static String getTryCount() {
         print(TRY_COUNT_INPUT_MESSAGE);
         String tryCount = Console.readLine();
-        if (TryCountValidator.validateTryCount(tryCount)) {
-            return Integer.parseInt(tryCount);
-        }
-        return getTryCount();
+        return tryCount;
     }
 }
