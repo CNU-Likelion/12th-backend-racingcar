@@ -29,12 +29,33 @@ public class Application {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
     }
-        public void printProgress(Car car) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(car.getName()).append(" : ");
-            for (int i = 0; i < car.getPosition(); i++) {
-                sb.append("-");
-            }
-            System.out.println(sb);
+    public void printProgress(Car car) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(car.getName()).append(" : ");
+        for (int i = 0; i < car.getPosition(); i++) {
+            sb.append("-");
         }
+        System.out.println(sb);
+    }
+    public static void printResult(List<Car> cars) {
+        int maxPosition = -1;
+        for (Car car : cars) {
+            maxPosition = Math.max(maxPosition, car.getPosition());
+        }
+
+        StringBuilder winners = new StringBuilder();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                if (winners.length() > 0) {
+                    winners.append(",");
+                }
+                winners.append(car.getName());
+            }
+        }
+        if (winners.toString().contains(",")) {
+            System.out.println("최종 우승자: " + winners);
+        } else {
+            System.out.println("최종 우승자: " + winners);
+        }
+    }
 }
