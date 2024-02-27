@@ -40,4 +40,12 @@ public class Car {
     public boolean isSamePositionCar(Car car) {
         return this.position.equals(car.position);
     }
+
+    public String getName() {
+        return name.getName();
+    }
+
+    public int getPosition() {
+        return position.getPosition();
+    }
 }

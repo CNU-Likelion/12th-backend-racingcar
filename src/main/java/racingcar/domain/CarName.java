@@ -11,4 +11,8 @@ public final class CarName {
     public static CarName of(String name) {
         return new CarName(name);
     }
+
+    public String getName() {
+        return name;
+    }
 }

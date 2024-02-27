@@ -24,7 +24,7 @@ public class Cars {
         }
     }
 
-    public List<Car> pickWinner(Cars racingCars) {
+    public List<Car> pickWinner() {
         Car maxPositionCar = findWinner();
         return findSamePositionCars(maxPositionCar);
     }
@@ -41,5 +41,9 @@ public class Cars {
                 .stream()
                 .filter(maxPositionCar::isSamePositionCar)
                 .collect(Collectors.toList());
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }

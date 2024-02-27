@@ -1,12 +1,11 @@
 package racingcar;
 
-import java.io.IOException;
 import racingcar.controller.RacingCarController;
 import racingcar.view.InputView;
 
 public class Application {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         final var carNames = InputView.getCarNames();
         final var tryCount = InputView.getTryCount();
 

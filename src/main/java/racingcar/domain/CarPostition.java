@@ -14,6 +14,10 @@ public final class CarPostition implements Comparable<CarPostition> {
         return new CarPostition(position);
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     public CarPostition add() {
         return CarPostition.of(position + 1);
     }
