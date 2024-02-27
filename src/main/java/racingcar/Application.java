@@ -53,9 +53,9 @@ public class Application {
 
         //우승자 출력
         List<Car> winners = findWinners(cars, maxPosition);
-        System.out.println("최종 우승자 : ");
+        System.out.print("최종 우승자 : ");
         String winnerNames = winnersToString(winners);
-        System.out.println(winnerNames);
+        System.out.print(winnerNames);
     }
 
     //위치의 최댓값
