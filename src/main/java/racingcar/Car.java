@@ -23,14 +23,14 @@ public class Car {
 
     public void move() {
         int randomNum = Randoms.pickNumberInRange(0, 9);
-        if(randomNum >= 4) {
+        if (randomNum >= 4) {
             position++;
         }
     }
 
     public void printCarMove(Car car) {
         System.out.print(car.getName() + " : ");
-        for(int i = 0; i < car.getPosition(); i++) {
+        for (int i = 0; i < car.getPosition(); i++) {
             System.out.print("-");
         }
     }
