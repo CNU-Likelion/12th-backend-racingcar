@@ -32,12 +32,6 @@ public class User {
         }
     }
 
-    public void makeCars() {
-        for (String name : carNames) {
-            cars.add(new Car(name));
-        }
-    }
-
     public void getGameCnt() {
         try {
             System.out.println("시도할 회수는 몇회인가요?");
@@ -47,5 +41,13 @@ public class User {
             getGameCnt();
         }
     }
+
+    public void makeCars() {
+        for (String name : carNames) {
+            cars.add(new Car(name));
+        }
+    }
+
+
 }
 

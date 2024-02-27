@@ -6,7 +6,6 @@ import java.util.List;
 public class GameResult {
     List<Car> winners = new ArrayList<>();
 
-
     public int findMaxPositionValue(List<Car> carList) {
         int maxPositionValue = carList.get(0).getPosition();
         for (Car c : carList) {
