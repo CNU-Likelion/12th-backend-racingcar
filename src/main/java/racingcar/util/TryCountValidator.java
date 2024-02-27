@@ -14,7 +14,7 @@ public class TryCountValidator {
             validateEmptyTryCount(tryCount);
         } catch (Exception e) {
             OutputView.print(e.getMessage());
-            InputView.getCarNames();
+            InputView.getTryCount();
         }
     }
 
