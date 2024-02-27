@@ -1,6 +1,5 @@
 package racingcar.domain;
 
-import racingcar.util.CarValidator;
 import racingcar.util.NumberGenerator;
 import racingcar.util.RandomNumberGenerator;
 
@@ -19,13 +18,13 @@ public class Car {
     }
 
     public void moveOrNot() {
-        boolean condition = moveCondition();
+        boolean condition = getMoveCondition();
         if (condition) {
             move();
         }
     }
 
-    private boolean moveCondition() {
+    private boolean getMoveCondition() {
         NumberGenerator numberGenerator = new RandomNumberGenerator();
         int randomValue = numberGenerator.generate();
         if (randomValue >= 4) {
