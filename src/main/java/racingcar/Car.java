@@ -18,6 +18,13 @@ public class Car {
         }
     }
 
+    public void status() {
+        System.out.printf("%s : ",this.name);
+        for (int i=0 ; i < position ; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
 
 
 }
