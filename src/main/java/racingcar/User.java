@@ -15,6 +15,17 @@ public class User {
             this.carNames = Arrays.stream(nameLine).toList();
     }
 
+    public void getGameCnt() {
+        try {
+            this.gameCnt = Integer.parseInt(readLine());
+
+        } catch (IllegalArgumentException e){
+            System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
+            getGameCnt();
+        }
+
+    }
+
 
 }
 
