@@ -8,12 +8,12 @@ public class Application {
         // TODO 구현 진행
     }
     public static void startGame() {
-        List <Car> cars = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String carName = mallang.missionutils.Console.readLine();
         String[] names = carName.split(",");
-        for(String name : names) {
-            if(name.length() > 5) {
+        for (String name : names) {
+            if (name.length() > 5) {
                 System.out.println("[ERROR] 자동차 이름은 5자 이하여야한다.");
                 return;
             }
@@ -29,4 +29,12 @@ public class Application {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
     }
+        public void printProgress(Car car) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(car.getName()).append(" : ");
+            for (int i = 0; i < car.getPosition(); i++) {
+                sb.append("-");
+            }
+            System.out.println(sb);
+        }
 }
