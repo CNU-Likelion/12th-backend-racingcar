@@ -13,8 +13,16 @@ public class User {
 
     public void getCarName() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        String[] nameLine = readLine().split(",");
-        this.carNames = Arrays.stream(nameLine).toList();
+        try {
+            String[] nameLine = readLine().split(",");
+            this.carNames = Arrays.stream(nameLine).toList();
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("[ERROR] 자동차 값 입력오류");
+            getCarName();
+
+        }
+
     }
 
     public void makeCars() {
@@ -31,6 +39,7 @@ public class User {
         } catch (IllegalArgumentException e){
             System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
             getGameCnt();
+
         }
 
     }
