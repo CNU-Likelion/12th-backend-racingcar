@@ -12,7 +12,7 @@ public class Car {
     }
 
     // 추가 기능 구현
-    public void moveForward() {
+    public void move() {
         int randomValue = Randoms.pickNumberInRange(0,9);
         if (randomValue >= 4) {
             position++;
@@ -20,9 +20,10 @@ public class Car {
     }
 
     public void printCarInfo(Car car) {
-        System.out.println(car.name + " : ");
+        System.out.print(car.name + " : ");
         for (int i = 0; i < car.position; i++) {
-            System.out.println("-");
+            System.out.print("-");
         }
+        System.out.println("");
     }
 }
