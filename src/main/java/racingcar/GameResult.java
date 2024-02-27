@@ -13,5 +13,14 @@ public class GameResult {
         return c2;
     }
 
+    public int findMaxPositionValue(List<Car> carList) {
+        int maxPositionValue = carList.get(0).getPosition();
+        for (Car c : carList) {
+            if(maxPositionValue < c.getPosition()) {
+                maxPositionValue = c.getPosition();
+            }
+        }
+        return maxPositionValue;
+    }
 
 }
