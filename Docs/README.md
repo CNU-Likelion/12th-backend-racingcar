@@ -3,8 +3,8 @@
   - 자동차의 이동횟수를 저장하는 변수 선언
 - 게임시작
     - Car 클래스에 자동차 이름(자동차 이름은 쉼표로 구분하고 5자 이하만 가능)과 시도 횟수 입력받는다. - mallang.missionutils.Console의 readline()
-    - 각걱의 자동차 객체를 리스트에 저장
     - 시도 횟수가 숫자가 아닐 경우 ‘IllegalArgumentException’ 예외 발생시키고 ‘[ERROR] 시도 횟수는 숫자여야 한다.‘ 출력
+    - 오류가 없을 경우 각각의 자동차 객체를 리스트에 저장
 - 예외 발생 시 해당 부분부터 다시 입력받기
 - 무작위 숫자 구하기 - mallang.missionutils.Randoms의 pickNumberInRange()
     - 무작위로 0 ~ 9 사이의 값을 구한다.
