@@ -48,9 +48,14 @@ public class Application {
             }
             System.out.println("");
         }
+
         int maxPosition = findMaxPosition(cars);
-        //최대 위치 출력 확인용
-        System.out.println(maxPosition);
+
+        //우승자 출력
+        List<Car> winners = findWinners(cars, maxPosition);
+        System.out.println("최종 우승자 : ");
+        String winnerNames = winnersToString(winners);
+        System.out.println(winnerNames);
     }
 
     //위치의 최댓값
@@ -64,4 +69,27 @@ public class Application {
         }
         return maxPosition;
     }
+
+    // 우승자 판별 메소드
+    private static List<Car> findWinners(List<Car> cars, int maxPosition) {
+        List<Car> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winners.add(car);
+            }
+        }
+        return winners;
+    }
+
+    private static String winnersToString(List<Car> winners) {
+        StringBuilder winnerNames = new StringBuilder();
+        for (int i = 0; i < winners.size(); i++) {
+            winnerNames.append(winners.get(i).getName());
+            if (i < winners.size() - 1) {
+                winnerNames.append(", ");
+            }
+        }
+        return winnerNames.toString();
+    }
 }
+
