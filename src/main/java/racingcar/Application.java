@@ -18,7 +18,7 @@ public class Application {
             cars.add(new Car(name.trim()));
         }
         int gameTurn = getTurn();
-        System.out.println("실행 결과 : ");
+        System.out.println("실행 결과");
         for (int i=0 ; i < gameTurn ; i++) {
             for (Car car : cars) {
                 car.carMove();
