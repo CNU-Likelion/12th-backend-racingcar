@@ -24,6 +24,6 @@ public class OutputView {
                 .stream()
                 .map(Car::getName)
                 .toList();
-        System.out.println(String.join(", ", winnerFormat) + "가 최종 우승했습니다.");
+        System.out.println("최종 우승자 : " + String.join(", ", winnerFormat));
     }
 }
