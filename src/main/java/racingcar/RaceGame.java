@@ -23,8 +23,8 @@ public class RaceGame {
         AnswerPrinter answerPrinter = new AnswerPrinter();
 
         for (int i = 0; i < racingCars.length; i++) {
-            if (randomNumMaker.RandomNum() >= 4) {
-                racingCars[i].IncreasePosition();
+            if (randomNumMaker.randomNum() >= 4) {
+                racingCars[i].increasePosition();
             }
         }
         answerPrinter.printEffect(racingCars);
