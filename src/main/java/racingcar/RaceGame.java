@@ -23,7 +23,7 @@ public class RaceGame {
         selectWinner();
     }
 
-    public void doSingleGame() {
+    private void doSingleGame() {
         AnswerPrinter answerPrinter = new AnswerPrinter();
 
         for (int i = 0; i < racingCars.length; i++) {
@@ -34,11 +34,11 @@ public class RaceGame {
         answerPrinter.printEffect(racingCars);
     }
 
-    static int randomNum() {
+    private int randomNum() {
         return Randoms.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     }
 
-    public void selectWinner() {
+    private void selectWinner() {
         AnswerPrinter answerPrinter = new AnswerPrinter();
         int maxPosition = 0;
         StringBuilder winner = new StringBuilder();
