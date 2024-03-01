@@ -1,6 +1,11 @@
 package racingcar;
 
+import mallang.missionutils.Randoms;
+
 public class RaceGame {
+
+    final static int MIN_RANDOM_NUMBER = 0;
+    final static int MAX_RANDOM_NUMBER = 9;
 
     private static Car[] racingCars;
 
@@ -19,15 +24,18 @@ public class RaceGame {
     }
 
     public void doSingleGame() {
-        RandomNumMaker randomNumMaker = new RandomNumMaker();
         AnswerPrinter answerPrinter = new AnswerPrinter();
 
         for (int i = 0; i < racingCars.length; i++) {
-            if (randomNumMaker.randomNum() >= 4) {
+            if (randomNum() >= 4) {
                 racingCars[i].increasePosition();
             }
         }
         answerPrinter.printEffect(racingCars);
+    }
+
+    static int randomNum() {
+        return Randoms.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     }
 
     public void selectWinner() {
