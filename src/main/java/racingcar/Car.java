@@ -5,7 +5,9 @@ import mallang.missionutils.Randoms;
 public class Car {
 
     private final String name;
-    private int position = 0;
+    private int position;
+    private static final int MIN_NUMBER = 0;
+    private static final int MAX_NUMBER = 9;
 
     public Car(String name) {
         this.name = name;
@@ -22,7 +24,7 @@ public class Car {
     }
 
     public void move() {
-        int randomNum = Randoms.pickNumberInRange(0, 9);
+        int randomNum = Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER);
         if (randomNum >= 4) {
             position++;
         }
