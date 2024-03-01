@@ -8,20 +8,8 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         List<Car> cars = getCarNames();
+        int attempts = getAttempts();
 
-
-        // 시도 횟수 입력 받기
-        int attempts = 0;
-        while (true) {
-            try {
-                System.out.println("시도할 회수는 몇회인가요?");
-                attempts = Integer.parseInt(Console.readLine());
-                System.out.println("실행 결과");
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("[ERROR] 시도 횟수는 숫자여야 합니다.");
-            }
-        }
 
         // 시도 횟수만큼 게임 진행
         for (int i = 0; i < attempts; i++) {
@@ -61,6 +49,17 @@ public class Application {
             }
         }
         return cars;
+    }
+
+    private static int getAttempts() {
+        while (true) {
+            try {
+                System.out.println("시도할 회수는 몇회인가요?");
+                return Integer.parseInt(Console.readLine());
+            } catch (NumberFormatException e) {
+                System.out.println("[ERROR] 시도 횟수는 숫자여야 합니다.");
+            }
+        }
     }
 
     //위치의 최댓값
