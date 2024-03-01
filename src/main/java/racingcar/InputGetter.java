@@ -23,14 +23,20 @@ public class InputGetter {
     }
 
     public int getNumberOfTry() {
-        System.out.println("시도할 회수는 몇회인가요?");
         InputChecker inputChecker = new InputChecker();
-        String numberOfTryInput = Console.readLine();
-        try {
-            inputChecker.checkNumber(numberOfTryInput);
-        } catch (Exception e) {
-            getNumberOfTry();
+        String numberOfTryInput = readNumber();
+        while(true){
+            try {
+                inputChecker.checkNumber(numberOfTryInput);
+                return Integer.parseInt(numberOfTryInput);
+            } catch (Exception e) {
+                numberOfTryInput = readNumber();
+            }
         }
-        return Integer.parseInt(numberOfTryInput);
+    }
+
+    private String readNumber(){
+        System.out.println("시도할 회수는 몇회인가요?");
+        return Console.readLine();
     }
 }
