@@ -6,14 +6,20 @@ public class InputGetter {
 
     public String[] getUserName() {
         InputChecker inputChecker = new InputChecker();
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        String[] userName = Console.readLine().split(",");
-        try {
-            inputChecker.checkName(userName);
-        } catch (Exception e) {
-            getUserName();
+        String[] userName = readUserName();
+        while(true){
+            try {
+                inputChecker.checkName(userName);
+                return userName;
+            } catch (Exception e) {
+                userName = readUserName();
+            }
         }
-        return userName;
+    }
+
+    static String[] readUserName() {
+        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        return  Console.readLine().split(",");
     }
 
     public int getNumberOfTry() {
