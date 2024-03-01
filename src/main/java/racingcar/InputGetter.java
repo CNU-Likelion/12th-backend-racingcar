@@ -6,13 +6,13 @@ public class InputGetter {
 
     public String[] getUserName() {
         InputChecker inputChecker = new InputChecker();
-        String[] userName = readUserName();
+        String[] userNames = readUserName();
         while(true){
             try {
-                inputChecker.checkName(userName);
-                return userName;
+                inputChecker.checkName(userNames);
+                return userNames;
             } catch (Exception e) {
-                userName = readUserName();
+                userNames = readUserName();
             }
         }
     }

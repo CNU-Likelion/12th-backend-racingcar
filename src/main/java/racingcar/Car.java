@@ -23,15 +23,12 @@ public class Car {
     }
 
     public int compareMaxAndPosition(int maxPosition) {
-        if (maxPosition <= position) {
-            return position;
-        }
-        return maxPosition;
+        return Math.max(maxPosition, position);
     }
 
     public StringBuilder addWinner(StringBuilder winner, int position) {
         if (position == this.position) {
-            if (winner.length() != 0) {
+            if (!winner.isEmpty()) {
                 winner.append(",");
             }
             winner.append(name);
