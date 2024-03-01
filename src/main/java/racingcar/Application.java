@@ -7,25 +7,8 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        List<Car> cars = new ArrayList<>();
-        
-        // 자동차 이름 입력받기
-        while (true) {
-            try {
-                System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-                String input = Console.readLine();
-                String[] names = input.split(",");
-                for (String name : names) {
-                    if (name.length() > 5) {
-                        System.out.println("[ERROR] 자동차 이름은 5자 이하여야 합니다.");
-                        throw new IllegalArgumentException();
-                    }
-                    cars.add(new Car(name.trim()));
-                }
-                break;
-            } catch (IllegalArgumentException e) {
-            }
-        }
+        List<Car> cars = getCarNames();
+
 
         // 시도 횟수 입력 받기
         int attempts = 0;
@@ -56,6 +39,28 @@ public class Application {
         System.out.print("최종 우승자 : ");
         String winnerNames = winnersToString(winners);
         System.out.print(winnerNames);
+    }
+
+    private static List<Car> getCarNames() {
+        List<Car> cars = new ArrayList<>();
+        while (true) {
+            try {
+                System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+                String input = Console.readLine();
+                String[] names = input.split(",");
+                for (String name : names) {
+                    if (name.length() > 5) {
+                        throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자 이하여야 합니다.");
+                    }
+                    cars.add(new Car(name.trim()));
+                }
+                break; // 유효한 입력이 들어온 경우 반복문 종료
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage()); // 예외 메시지 출력
+                // 사용자에게 재입력을 유도하기 위해 다시 반복
+            }
+        }
+        return cars;
     }
 
     //위치의 최댓값
