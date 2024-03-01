@@ -10,7 +10,6 @@ public class AnswerPrinter {
     }
 
     public void printWinner(StringBuilder winner) {
-        System.out.printf("최종 우승자 : ");
-        System.out.println(winner);
+        System.out.println("최종 우승자 : " + winner);
     }
 }
