@@ -31,7 +31,7 @@ public class RaceGame {
 
                 return cars;
             } catch (IllegalArgumentException e) {
-                printErrorMessage(e.getMessage());
+                System.out.println(e.getMessage());
             }
         }
     }
