@@ -60,5 +60,16 @@ public class Application {
 
         printResult(winners);
     }
+    public static void printResult(List<Car> winners) {
+        StringBuilder winnersNames = new StringBuilder();
+        for (Car winner : winners) {
+            if (winnersNames.length() > 0) {
+                winnersNames.append(", ");
+            }
+            winnersNames.append(winner.getName());
+        }
+
+        System.out.println("최종 우승자: " + winnersNames.toString());
+    }
 
 }
