@@ -27,12 +27,12 @@ public class Application {
             System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             String carNamesInput = Console.readLine();
             try {
-                validateCarNames(carNamesInput);
                 String[] carNames = carNamesInput.split(",");
                 List<Car> cars = new ArrayList<>();
 
                 for (String carName : carNames) {
                     cars.add(new Car(carName));
+                    validateCarNames(carName);
                 }
 
                 return cars;
@@ -43,7 +43,7 @@ public class Application {
     }
 
     private static void validateCarNames(String carNames) {
-        if (!carNames.matches("[a-zA-Z]+(,[a-zA-Z]+)*")) {
+        if (!carNames.matches("^[a-zA-Z]{1,5}$")) {
             throw new IllegalArgumentException("자동차 이름은 영문자로만 구분하여 입력하세요.");
         }
     }
@@ -120,5 +120,4 @@ public class Application {
     private static void printErrorMessage(String errorMessage) {
         System.out.println("[ERROR] " + errorMessage);
     }
-
 }
