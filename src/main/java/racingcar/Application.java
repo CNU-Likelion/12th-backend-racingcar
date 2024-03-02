@@ -8,10 +8,11 @@ public class Application {
         // TODO 구현 진행
     }
 
-    public static class Input {
+    public static void Input() {
         List<Car> cars = new ArrayList<>();
         int attempt = inputAttempt();
     }
+
 
     public static void startGame() {
         List<Car> cars = new ArrayList<>();
