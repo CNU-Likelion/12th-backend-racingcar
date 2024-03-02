@@ -7,6 +7,8 @@ import java.util.List;
 
 public class RaceGame {
 
+    private List<Car> cars;
+    
     private static List<Car> initializeCars() {
         while (true) {
             System.out.println(Messages.RACING_CAR_NAME_INPUT);
