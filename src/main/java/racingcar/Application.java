@@ -7,6 +7,12 @@ public class Application {
     public static void main(String[] args) {
         // TODO 구현 진행
     }
+
+    public static class Input {
+        List<Car> cars = new ArrayList<>();
+        int attempt = inputAttempt();
+    }
+
     public static void startGame() {
         List<Car> cars = new ArrayList<>();
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
@@ -29,6 +35,7 @@ public class Application {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
     }
+    public static void inputGameCnt() {}
     public static void printProgress(Car car) {
         StringBuilder sb = new StringBuilder();
         sb.append(car.getName()).append(" : ");
