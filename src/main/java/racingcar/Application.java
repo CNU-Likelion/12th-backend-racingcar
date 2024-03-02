@@ -1,6 +1,7 @@
 package racingcar;
 
 import static racingcar.Win.*;
+import static racingcar.PrintStatus.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,28 +10,9 @@ import mallang.missionutils.Console;
 public class Application {
 
     public static void main(String[] args) {
-        /*System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        List<Car> cars = new ArrayList<>();
-        String inputName = Console.readLine();*/
-        List<Car> cars = new ArrayList<>();
         getCarName();
-        /*String[] names = inputName.split(",");
-        for (String name : names) {
-            cars.add(new Car(name.trim()));
-        }
-        int gameTurn = getTurn();
-        System.out.println("실행 결과");
-        for (int i=0 ; i < gameTurn ; i++) {
-            for (Car car : cars) {
-                car.carMove();
-                car.printCarStatus(car);
-                System.out.println();
-            }
-            System.out.println();
-        }
-        printWinnerNames(cars); */
-
     }
+
     public static void getCarName() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         try {
@@ -45,8 +27,8 @@ public class Application {
             System.out.println("실행 결과");
             for (int i=0 ; i < gameTurn ; i++) {
                 for (Car car : cars) {
-                    car.carMove();
-                    car.printCarStatus(car);
+                    car.move();
+                    PrintStatus.printCarStatus(car);
                     System.out.println();
                 }
                 System.out.println();
@@ -90,3 +72,4 @@ public class Application {
         return gameTurn;
     }
 }
+
