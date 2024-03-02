@@ -7,7 +7,7 @@ import java.util.List;
 
 public class RaceGame {
 
-    private static List<Car> cars;
+    private List<Car> cars;
 
     public void startGame() {
         cars = initializeCars();
@@ -16,7 +16,7 @@ public class RaceGame {
         printWinners(checkWinner());
     }
 
-    private static List<Car> initializeCars() {
+    private List<Car> initializeCars() {
         while (true) {
             System.out.println(Messages.RACING_CAR_NAME_INPUT);
             String carNamesInput = Console.readLine();
@@ -36,13 +36,13 @@ public class RaceGame {
         }
     }
 
-    private static void validateCarNames(String carNames) {
+    private void validateCarNames(String carNames) {
         if (!carNames.matches("^[a-zA-Z]{1,5}$")) {
             throw new IllegalArgumentException(Messages.CAR_NAME_ENGLISH_ONLY);
         }
     }
 
-    private static int getTryCount() {
+    private int getTryCount() {
         while (true) {
             System.out.println(Messages.TRY_COUNT);
             String tryCountInput = Console.readLine();
@@ -54,7 +54,7 @@ public class RaceGame {
         }
     }
 
-    private static void race(int tryCount) {
+    private void race(int tryCount) {
         for (int i = 0; i < tryCount; i++) {
             for (Car car : cars) {
                 car.move();
@@ -63,7 +63,7 @@ public class RaceGame {
         }
     }
 
-    private static void printRaceResult() {
+    private void printRaceResult() {
         System.out.println(Messages.RESULT);
 
         for (Car car : cars) {
@@ -77,7 +77,7 @@ public class RaceGame {
         }
     }
 
-    private static List<String> checkWinner() {
+    private List<String> checkWinner() {
         List<String> winners = new ArrayList<>();
         int maxPosition = getMaxPosition(cars);
 
@@ -90,7 +90,7 @@ public class RaceGame {
         return winners;
     }
 
-    private static int getMaxPosition() {
+    private int getMaxPosition() {
         int max = 0;
 
         for (Car car : cars) {
@@ -100,12 +100,12 @@ public class RaceGame {
         return max;
     }
 
-    private static void printWinners(List<String> winners) {
+    private void printWinners(List<String> winners) {
         System.out.print(Messages.WINNER);
         System.out.println(String.join(", ", winners));
     }
 
-    private static void printErrorMessage(String errorMessage) {
+    private void printErrorMessage(String errorMessage) {
         System.out.println("[ERROR] " + errorMessage);
     }
 }
