@@ -29,7 +29,7 @@ public class Application {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
     }
-    public void printProgress(Car car) {
+    public static void printProgress(Car car) {
         StringBuilder sb = new StringBuilder();
         sb.append(car.getName()).append(" : ");
         for (int i = 0; i < car.getPosition(); i++) {
