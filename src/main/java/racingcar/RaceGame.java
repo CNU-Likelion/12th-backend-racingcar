@@ -79,7 +79,7 @@ public class RaceGame {
 
     private List<String> checkWinner() {
         List<String> winners = new ArrayList<>();
-        int maxPosition = getMaxPosition(cars);
+        int maxPosition = getMaxPosition();
 
         for (Car car : cars) {
             if (car.getPosition() == maxPosition) {
