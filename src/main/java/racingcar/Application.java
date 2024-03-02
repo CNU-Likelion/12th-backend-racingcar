@@ -5,9 +5,10 @@ import mallang.missionutils.Console;
 
 public class Application {
     public static void main(String[] args) {
+        input();
         // TODO 구현 진행
     }
-    public static void Input() {
+    public static void input() {
         List<Car> cars = new ArrayList<>();
         int attempt = inputAttempt();
     }
@@ -43,6 +44,21 @@ public class Application {
             sb.append("-");
         }
         System.out.println(sb);
+    }
+    public static void findWinners(List<Car> cars) {
+        int maxPosition = -1;
+        for (Car car : cars) {
+            maxPosition = Math.max(maxPosition, car.getPosition());
+        }
+
+        List<Car> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winners.add(car);
+            }
+        }
+
+        printResult(winners);
     }
     public static void printResult(List<Car> cars) {
         int maxPosition = -1;
