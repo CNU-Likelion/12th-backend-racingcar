@@ -19,7 +19,7 @@ public class Application {
 
     private static List<Car> initializeCars() {
         while (true) {
-            System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+            System.out.println(Messages.RACING_CAR_NAME_INPUT);
             String carNamesInput = Console.readLine();
             try {
                 String[] carNames = carNamesInput.split(",");
@@ -39,13 +39,13 @@ public class Application {
 
     private static void validateCarNames(String carNames) {
         if (!carNames.matches("^[a-zA-Z]{1,5}$")) {
-            throw new IllegalArgumentException("자동차 이름은 영문자로만 구분하여 입력하세요.");
+            throw new IllegalArgumentException(Messages.CAR_NAME_ENGLISH_ONLY);
         }
     }
 
     private static int getTryCount() {
         while (true) {
-            System.out.println("시도할 횟수는 몇 회인가요?");
+            System.out.println(Messages.TRY_COUNT);
             String tryCountInput = Console.readLine();
             try {
                 validateTryCount(tryCountInput);
@@ -58,7 +58,7 @@ public class Application {
 
     private static void validateTryCount(String tryCount) {
         if (!tryCount.matches("\\d+")) {
-            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
+            throw new IllegalArgumentException(Messages.TRY_COUNT_NUMBER_ONLY);
         }
     }
 
@@ -71,7 +71,7 @@ public class Application {
     }
 
     private static void printRaceResult(List<Car> cars) {
-        System.out.println("\n실행 결과");
+        System.out.println(Messages.RESULT);
 
         for (Car car : cars) {
             StringBuilder result = new StringBuilder(car.getName() + " : ");
@@ -108,7 +108,7 @@ public class Application {
     }
 
     private static void printWinners(List<String> winners) {
-        System.out.print("\n최종 우승자 : ");
+        System.out.print(Messages.WINNER);
         System.out.println(String.join(", ", winners));
     }
 
