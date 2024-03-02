@@ -11,6 +11,9 @@ public class Application {
     public static void input() {
         List<Car> cars = new ArrayList<>();
         int attempt = inputAttempt();
+        inputCarName();
+
+
     }
     public static List<Car> inputCarName() {
         List<Car> cars = new ArrayList<>();
@@ -36,7 +39,6 @@ public class Application {
             return inputAttempt();
         }
     }
-    public static void inputGameCnt() {}
     public static void printProgress(Car car) {
         StringBuilder sb = new StringBuilder();
         sb.append(car.getName()).append(" : ");
