@@ -1,7 +1,8 @@
 package racingcar;
 import mallang.missionutils.Randoms;
 public class Car {
-
+    private static final int MAX = 9;
+    private static final int MIN = 0;
     private final String name;
     private int position = 0;
 
@@ -10,8 +11,8 @@ public class Car {
         this.position = 0;
     }
 
-    public void carMove() {
-        int randomNum = Randoms.pickNumberInRange(0, 9);
+    public void move() {
+        int randomNum = Randoms.pickNumberInRange(MIN, MAX);
         if (randomNum >= 4) {
             position++;
         }
@@ -23,12 +24,5 @@ public class Car {
 
     public String getName() {
         return this.name;
-    }
-
-    public void printCarStatus(Car car) {
-        System.out.print(car.getName() + " : ");
-        for (int i=0 ; i<car.getPosition() ; i++) {
-            System.out.print("-");
-        }
     }
 }
