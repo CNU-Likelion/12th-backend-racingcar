@@ -7,25 +7,24 @@ public class Application {
     public static void main(String[] args) {
         // TODO 구현 진행
     }
-
     public static void Input() {
         List<Car> cars = new ArrayList<>();
         int attempt = inputAttempt();
     }
-
-
-    public static void startGame() {
+    public static List<Car> inputCarName() {
         List<Car> cars = new ArrayList<>();
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String carName = mallang.missionutils.Console.readLine();
         String[] names = carName.split(",");
         for (String name : names) {
             if (name.length() > 5) {
-                System.out.println("[ERROR] 자동차 이름은 5자 이하여야한다.");
-                return;
+                System.out.println("[ERROR] 자동차 이름은 5자 이하여야합니다.");
+                return inputCarName();
             }
             cars.add(new Car(name));
         }
+        return cars;
+    }
 
         System.out.println("시도 할 횟수");
         String attemptInput = mallang.missionutils.Console.readLine();
