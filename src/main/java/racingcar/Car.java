@@ -6,6 +6,7 @@ public class Car {
 
     private final String name;
     private int position = 0;
+    private static final int MOVE_THRESHOLD = 4;
 
     public Car(String name) {
         this.name = name;
@@ -14,7 +15,7 @@ public class Car {
     // 추가 기능 구현
     public void moveForward() {
         int move = Randoms.pickNumberInRange(0,9);
-        if(move >= 4) {
+        if(move >= MOVE_THRESHOLD) {
             position += 1;
         }
     }
