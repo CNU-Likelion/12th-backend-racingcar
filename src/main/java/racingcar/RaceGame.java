@@ -7,8 +7,8 @@ import java.util.List;
 
 public class RaceGame {
 
-    private List<Car> cars;
-    
+    private static List<Car> cars;
+
     private static List<Car> initializeCars() {
         while (true) {
             System.out.println(Messages.RACING_CAR_NAME_INPUT);
@@ -54,7 +54,7 @@ public class RaceGame {
         }
     }
 
-    private static void race(List<Car> cars, int tryCount) {
+    private static void race(int tryCount) {
         for (int i = 0; i < tryCount; i++) {
             for (Car car : cars) {
                 car.move();
@@ -62,7 +62,7 @@ public class RaceGame {
         }
     }
 
-    private static void printRaceResult(List<Car> cars) {
+    private static void printRaceResult() {
         System.out.println(Messages.RESULT);
 
         for (Car car : cars) {
@@ -76,7 +76,7 @@ public class RaceGame {
         }
     }
 
-    private static List<String> checkWinner(List<Car> cars) {
+    private static List<String> checkWinner() {
         List<String> winners = new ArrayList<>();
         int maxPosition = getMaxPosition(cars);
 
@@ -89,7 +89,7 @@ public class RaceGame {
         return winners;
     }
 
-    private static int getMaxPosition(List<Car> cars) {
+    private static int getMaxPosition() {
         int max = 0;
 
         for (Car car : cars) {
