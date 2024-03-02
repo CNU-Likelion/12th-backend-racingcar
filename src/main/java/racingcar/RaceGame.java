@@ -9,6 +9,13 @@ public class RaceGame {
 
     private static List<Car> cars;
 
+    public void startGame() {
+        cars = initializeCars();
+        int tryCount = getTryCount();
+        race(tryCount);
+        printWinners(checkWinner());
+    }
+
     private static List<Car> initializeCars() {
         while (true) {
             System.out.println(Messages.RACING_CAR_NAME_INPUT);
