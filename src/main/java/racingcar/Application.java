@@ -60,25 +60,5 @@ public class Application {
 
         printResult(winners);
     }
-    public static void printResult(List<Car> cars) {
-        int maxPosition = -1;
-        for (Car car : cars) {
-            maxPosition = Math.max(maxPosition, car.getPosition());
-        }
 
-        StringBuilder winners = new StringBuilder();
-        for (Car car : cars) {
-            if (car.getPosition() == maxPosition) {
-                if (winners.length() > 0) {
-                    winners.append(",");
-                }
-                winners.append(car.getName());
-            }
-        }
-        if (winners.toString().contains(",")) {
-            System.out.println("최종 우승자: " + winners);
-        } else {
-            System.out.println("최종 우승자: " + winners);
-        }
-    }
 }
