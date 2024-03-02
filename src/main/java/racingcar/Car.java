@@ -6,26 +6,8 @@ public class Car {
     private int position = 0;
 
     public Car(String name) {
-        checkCarName(name);
         this.name = name;
         this.position = 0;
-    }
-
-    public void checkLength(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("[ERROR]5자 이하의 이름을 입력하시오.");
-        }
-    }
-
-    public void checkEmpty(String name) {
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("[ERROR]이름을 입력하시오.");
-        }
-    }
-
-    public void checkCarName(String name) {
-        checkEmpty(name);
-        checkLength(name);
     }
 
     public void carMove() {
