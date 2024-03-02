@@ -54,12 +54,6 @@ public class RaceGame {
         }
     }
 
-    private static void validateTryCount(String tryCount) {
-        if (!tryCount.matches("\\d+")) {
-            throw new IllegalArgumentException(Messages.TRY_COUNT_NUMBER_ONLY);
-        }
-    }
-
     private static void race(int tryCount) {
         for (int i = 0; i < tryCount; i++) {
             for (Car car : cars) {
