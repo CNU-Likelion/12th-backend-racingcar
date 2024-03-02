@@ -25,14 +25,14 @@ public class Application {
         }
         return cars;
     }
-
-        System.out.println("시도 할 횟수");
+    public static int inputAttempt() {
+        System.out.println("시도 할 횟수를 입력하세요.");
         String attemptInput = mallang.missionutils.Console.readLine();
-        int attempt;
         try {
-            attempt = Integer.parseInt(attemptInput);
+            return Integer.parseInt(attemptInput);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
+            System.out.println("[ERROR] 시도 횟수는 숫자여야 합니다.");
+            return inputAttempt();
         }
     }
     public static void inputGameCnt() {}
