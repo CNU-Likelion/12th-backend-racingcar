@@ -104,8 +104,4 @@ public class RaceGame {
         System.out.print(Messages.WINNER);
         System.out.println(String.join(", ", winners));
     }
-
-    private void printErrorMessage(String errorMessage) {
-        System.out.println("[ERROR] " + errorMessage);
-    }
 }
