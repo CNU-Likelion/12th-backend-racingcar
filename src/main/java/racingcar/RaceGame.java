@@ -47,10 +47,9 @@ public class RaceGame {
             System.out.println(Messages.TRY_COUNT);
             String tryCountInput = Console.readLine();
             try {
-                validateTryCount(tryCountInput);
                 return Integer.parseInt(tryCountInput);
             } catch (IllegalArgumentException e) {
-                printErrorMessage(e.getMessage());
+                System.out.println(Messages.TRY_COUNT_NUMBER_ONLY);
             }
         }
     }
