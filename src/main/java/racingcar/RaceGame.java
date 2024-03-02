@@ -59,6 +59,7 @@ public class RaceGame {
             for (Car car : cars) {
                 car.move();
             }
+            printRaceResult();
         }
     }
 
