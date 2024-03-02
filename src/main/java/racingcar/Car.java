@@ -1,6 +1,5 @@
 package racingcar;
 
-import mallang.missionutils.Console;
 import mallang.missionutils.Randoms;
 
 public class Car {
