@@ -6,7 +6,7 @@ import java.util.List;
 
 import static mallang.missionutils.Console.readLine;
 
-public class User {
+public class Cars {
     List<String> carNames = new ArrayList<>();
     List<Car> cars = new ArrayList<>();
     int gameCnt;

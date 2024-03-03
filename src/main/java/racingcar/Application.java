@@ -5,27 +5,27 @@ public class Application {
     public static void main(String[] args) {
         // TODO 구현 진행
 
-        User user = new User();
+        Cars cars = new Cars();
         GameResult result= new GameResult();
 
-        user.getCarName();
-        user.getGameCnt();
+        cars.getCarName();
+        cars.getGameCnt();
 
-        user.makeCars();
+        cars.makeCars();
 
         System.out.println("실행 결과");
 
-        for (int i=0 ; i<user.gameCnt; i++) {
-            for (Car c: user.cars) {
+        for (int i=0 ; i<cars.gameCnt; i++) {
+            for (Car c: cars.cars) {
                 c.move();
             }
-            for (Car c: user.cars) {
+            for (Car c: cars.cars) {
                 c.status();
             }
             System.out.println();
         }
 
-        result.addWinnerCars(user.cars);
+        result.addWinnerCars(cars.cars);
         result.printGameResult();
     }
 }
