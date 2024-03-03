@@ -37,7 +37,7 @@ public class Cars {
         try {
             System.out.println("시도할 회수는 몇회인가요?");
             this.gameCnt = Integer.parseInt(readLine());
-        } catch (IllegalArgumentException e){
+        } catch (Exception e){
             System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
             getGameCnt();
         }
