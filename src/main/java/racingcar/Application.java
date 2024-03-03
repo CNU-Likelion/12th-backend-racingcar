@@ -16,12 +16,8 @@ public class Application {
         System.out.println("실행 결과");
 
         for (int i=0 ; i<cars.gameCnt; i++) {
-            for (Car c: cars.cars) {
-                c.move();
-            }
-            for (Car c: cars.cars) {
-                c.status();
-            }
+            cars.moveAllCars(cars.cars);
+            cars.getAllCarsStatus(cars.cars);
             System.out.println();
         }
 

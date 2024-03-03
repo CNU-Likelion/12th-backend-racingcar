@@ -49,6 +49,17 @@ public class Cars {
         }
     }
 
+    public void moveAllCars(List<Car> cars) {
+        for (Car c: cars) {
+            c.move();
+        }
+    }
 
+    public void getAllCarsStatus(List<Car> cars) {
+        for (Car c : cars) {
+            c.status();
+        }
+
+    }
 }
 
