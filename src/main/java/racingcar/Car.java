@@ -26,12 +26,4 @@ public class Car {
             position++;
         }
     }
-
-    public void printCarInfo(Car car) {
-        System.out.print(car.name + " : ");
-        for (int i = 0; i < car.position; i++) {
-            System.out.print("-");
-        }
-        System.out.println("");
-    }
 }

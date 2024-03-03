@@ -24,10 +24,12 @@ public class Application {
         int tryCount = Integer.parseInt(Console.readLine());
         System.out.println("실행 결과");
 
+        ResultPrinter resultPrinter = new ResultPrinter();
+
         for (int i = 0; i < tryCount; i++) {
             for (Car car : cars) {
                 car.move();
-                car.printCarInfo(car);
+                resultPrinter.printCarInfo(car);
             }
             System.out.println("");
         }
