@@ -2,12 +2,36 @@ package racingcar;
 
 public class Car {
 
-    private final String name;
-    private int position = 0;
+    private Name name = new Name();
+    private Position position = new Position();
 
     public Car(String name) {
-        this.name = name;
+        this.name.setValue(name);
     }
 
-    // 추가 기능 구현
+    public void increasePosition() {
+        position.increasePosition();
+    }
+
+    public int compareMaxAndPosition(int maxPosition) {
+        return Math.max(maxPosition, position.value());
+    }
+
+    public StringBuilder addWinner(StringBuilder winner, int position) {
+        if (position == this.position.value()) {
+            if (!winner.isEmpty()) {
+                winner.append(",");
+            }
+            winner.append(name.value());
+        }
+        return winner;
+    }
+
+    public String getName(){
+        return name.value();
+    }
+
+    public int getPosition(){
+        return position.value();
+    }
 }
