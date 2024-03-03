@@ -11,26 +11,11 @@ public class Application {
     }
 
     private static void startRace() {
-        List<Car> cars = new ArrayList<>();
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        while (true) {
-            try {
-                String[] carNames = Console.readLine().split(",");
-                validateNames(carNames);
-
-                for (String name : carNames) {
-                    cars.add(new Car(name));
-                }
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-
+        List<Car> cars = getCars();
         System.out.println("시도할 횟수는 몇회인가요?");
         int tryCount = Integer.parseInt(Console.readLine());
-        System.out.println("실행 결과");
 
+        System.out.println("실행 결과");
         ResultPrinter resultPrinter = new ResultPrinter();
 
         for (int i = 0; i < tryCount; i++) {
@@ -42,6 +27,24 @@ public class Application {
         }
         List<String> winners = getWinners(cars);
         System.out.println("최종 우승자 : " + String.join(", ", winners));
+    }
+
+    private static List<Car> getCars() {
+        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        while (true) {
+            try {
+                String[] carNames = Console.readLine().split(",");
+                validateNames(carNames);
+
+                List<Car> cars = new ArrayList<>();
+                for (String name : carNames) {
+                    cars.add(new Car(name));
+                }
+                return cars;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private static void validateNames(String[] names) {
