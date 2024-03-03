@@ -6,14 +6,17 @@ public class Car {
 
     private final String name;
     private int position = 0;
+    final int CHECK_MOVE_NUM = 4;
+    final int PICK_NUM_RANGE_MIN = 0;
+    final int PICK_NUM_RANGE_MAX= 9;
 
     public Car(String name) {
         this.name = name;
     }
 
     public void move() {
-        int randNum = pickNumberInRange(0,9);
-        if (randNum >= 4) {
+        int randNum = pickNumberInRange(PICK_NUM_RANGE_MIN,PICK_NUM_RANGE_MAX);
+        if (randNum >= CHECK_MOVE_NUM) {
             this.position ++;
         }
     }

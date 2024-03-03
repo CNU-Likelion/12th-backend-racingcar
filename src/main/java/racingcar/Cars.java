@@ -10,13 +10,14 @@ public class Cars {
     List<String> carNames = new ArrayList<>();
     List<Car> cars = new ArrayList<>();
     int gameCnt;
+    final int MAX_NAME_LENGTH = 5;
 
     public void getCarName() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         try {
             String[] nameLine = readLine().split(",");
             this.carNames = Arrays.stream(nameLine).toList();
-            checkNameLength(5);
+            checkNameLength(MAX_NAME_LENGTH);
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 자동차 값 입력오류");
             getCarName();
