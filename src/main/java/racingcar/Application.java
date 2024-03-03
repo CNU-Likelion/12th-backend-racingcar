@@ -13,11 +13,18 @@ public class Application {
     private static void startRace() {
         List<Car> cars = new ArrayList<>();
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        String[] carNames = Console.readLine().split(",");
+        while (true) {
+            try {
+                String[] carNames = Console.readLine().split(",");
+                validateNames(carNames);
 
-        for (String name : carNames) {
-            validateName(name);
-            cars.add(new Car(name));
+                for (String name : carNames) {
+                    cars.add(new Car(name));
+                }
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
         System.out.println("시도할 횟수는 몇회인가요?");
@@ -37,9 +44,11 @@ public class Application {
         System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
 
-    private static void validateName(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자 이하만 가능합니다.");
+    private static void validateNames(String[] names) {
+        for (String name : names) {
+            if (name.length() > 5) {
+                throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자 이하만 가능합니다.");
+            }
         }
     }
 
